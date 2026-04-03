@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Ananya & Arjun | Indian Wedding Invitation</title>
+  <!-- Google Fonts for modern & elegant typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fef7e8;  /* warm sand base */
+      font-family: 'Inter', sans-serif;
+      color: #3e2a27;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f0e2cf;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c9a87b;
+      border-radius: 10px;
+    }
+
+    /* main container */
+    .invitation {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fffaf3;
+      box-shadow: 0 0 40px rgba(0,0,0,0.03);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* floral/pattern decorative elements (subtle) */
+    .bg-pattern {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.08;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23b87333" d="M20,30 Q30,20 40,30 Q50,40 40,50 Q30,60 20,50 Q10,40 20,30Z M70,60 Q80,50 90,60 Q100,70 90,80 Q80,90 70,80 Q60,70 70,60Z M45,75 Q50,70 55,75 Q60,80 55,85 Q50,90 45,85 Q40,80 45,75Z"/></svg>');
+      background-repeat: repeat;
+      background-size: 48px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* music player pill */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255,245,235,0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 60px;
+      padding: 10px 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #e7d5bf;
+      font-family: 'Inter', sans-serif;
+    }
+    .music-btn {
+      background: #b3572e;
+      border: none;
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .music-btn:hover {
+      background: #8e3e1c;
+      transform: scale(1.02);
+    }
+    .music-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #7e5a41;
+      letter-spacing: 0.3px;
+    }
+    .music-status {
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: #efe3d4;
+      padding: 4px 10px;
+      border-radius: 30px;
+      color: #ac6e48;
+    }
+
+    /* header section */
+    .header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      padding-top: 1rem;
+    }
+    .saubhagya {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b87c4f;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .couple-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #9b4b2c;
+      margin: 0.5rem 0;
+      line-height: 1.2;
+    }
+    .date-badge {
+      background: #f5e7db;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #b16238;
+      margin-top: 0.5rem;
+    }
+
+    /* traditional motif */
+    .mandala {
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 8px;
+      color: #e1c094;
+      margin: 0.8rem 0;
+    }
+
+    /* invitation card */
+    .invite-card {
+      background: white;
+      border-radius: 32px;
+      padding: 1.8rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      border: 1px solid #f7ecdf;
+    }
+    .invite-text {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      color: #4b3621;
+    }
+    .sanskrit-shloka {
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      background: #fff6ed;
+      padding: 0.8rem;
+      border-radius: 40px;
+      margin: 1rem 0;
+      color: #ad6b42;
+    }
+
+    /* event details grid */
+    .events {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .event-item {
+      background: #fef9f2;
+      border-radius: 28px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #f5e5d6;
+      transition: all 0.2s;
+    }
+    .event-icon {
+      font-size: 2rem;
+      min-width: 50px;
+      text-align: center;
+      color: #c28254;
+    }
+    .event-detail h4 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #7b3f20;
+    }
+    .event-detail p {
+      font-size: 0.85rem;
+      color: #876b54;
+      margin-top: 4px;
+    }
+
+    /* venue & map */
+    .venue {
+      background: linear-gradient(135deg, #fff3e8, #fffaf3);
+      border-radius: 32px;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 1.2rem 0;
+      border: 1px solid #eedbcb;
+    }
+    .venue i {
+      font-size: 1.8rem;
+      color: #bc7a48;
+      margin-bottom: 0.5rem;
+    }
+    .venue h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .map-link {
+      display: inline-block;
+      margin-top: 12px;
+      background: #bc7a48;
+      color: white;
+      padding: 8px 22px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .map-link:hover {
+      background: #9d5d34;
+    }
+
+    /* rsvp section */
+    .rsvp {
+      background: #f9ede2;
+      border-radius: 32px;
+      padding: 1.8rem;
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .rsvp h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #9c4d29;
+    }
+    .rsvp-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.2rem 0;
+      flex-wrap: wrap;
+    }
+    .rsvp-btn {
+      background: white;
+      border: 1.5px solid #ccaa86;
+      padding: 8px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #8b4f2c;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rsvp-btn i {
+      font-size: 0.9rem;
+    }
+    .rsvp-btn:hover {
+      background: #bc7a48;
+      color: white;
+      border-color: #bc7a48;
+    }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #b59379;
+      padding: 2rem 0 0.5rem;
+      border-top: 1px solid #f2e3d4;
+      margin-top: 2rem;
+    }
+
+    /* responsive fine-tune */
+    @media (max-width: 480px) {
+      .content {
+        padding: 1.2rem 1rem 2rem;
+      }
+      .couple-name {
+        font-size: 2rem;
+      }
+      .invite-card {
+        padding: 1.2rem;
+      }
+      .music-player {
+        bottom: 12px;
+        right: 12px;
+        padding: 6px 14px;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="invitation">
+  <div class="content">
+    <!-- Header -->
+    <div class="header">
+      <div class="saubhagya">शुभ विवाह</div>
+      <div class="mandala">✧ ॐ ✧</div>
+      <div class="couple-name">Ananya & Arjun</div>
+      <div class="date-badge"><i class="fas fa-calendar-alt" style="margin-right: 6px;"></i> Saturday, 14th December 2025</div>
+    </div>
+
+    <!-- invitation card with heartfelt message -->
+    <div class="invite-card">
+      <div class="invite-text">
+        With blessings of <strong>Mata Rani</strong> & family elders,<br/>
+        we cordially invite you to celebrate our sacred union.
+      </div>
+      <div class="sanskrit-shloka">
+        “विवाह संस्कार: संस्काराणां मूलम्” <br/> 
+        ~ Togetherness begins forever ~
+      </div>
+      <div class="invite-text">
+        Join us as we exchange vows, share laughter, and begin our journey of togetherness.
+      </div>
+    </div>
+
+    <!-- Wedding events timeline -->
+    <div class="events">
+      <div class="event-item">
+        <div class="event-icon"><i class="fas fa-om"></i></div>
+        <div class="event-detail">
+          <h4>Ganesh Pooja & Mehendi</h4>
+          <p>13th Dec, 6:00 PM · Lawns, Jaipur</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-icon"><i class="fas fa-ring"></i></div>
+        <div class="event-detail">
+          <h4>Wedding Ceremony</h4>
+          <p>14th Dec, 8:30 PM · Mandap, The Royal Orchid</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-icon"><i class="fas fa-utensils"></i></div>
+        <div class="event-detail">
+          <h4>Reception & Dinner</h4>
+          <p>15th Dec, 7:00 PM · Grand Garden, Jaipur</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue + map link (static but realistic google maps) -->
+    <div class="venue">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>The Royal Orchid & Lawns</h3>
+      <p>Jawahar Lal Nehru Marg, Jaipur, Rajasthan - 302002</p>
+      <a href="https://maps.google.com/?q=The+Royal+Orchid+Jaipur" target="_blank" class="map-link"><i class="fas fa-directions"></i> Get Directions</a>
+    </div>
+
+    <!-- RSVP quick contact (Indian style) -->
+    <div class="rsvp">
+      <h3>RSVP & Blessings</h3>
+      <p style="margin-bottom: 6px;">Kindly grace us with your presence</p>
+      <div class="rsvp-buttons">
+        <a href="tel:+919876543210" class="rsvp-btn"><i class="fas fa-phone-alt"></i> Call</a>
+        <a href="https://wa.me/919876543210?text=Excited%20to%20attend%20Ananya%20%26%20Arjun's%20wedding!" class="rsvp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <div class="invite-text" style="font-size: 0.75rem; margin-top: 10px;">
+        <i class="fas fa-heart" style="color:#c28254;"></i> Family hosts: Mr. & Mrs. Sharma & Mr. & Mrs. Rathore
+      </div>
+    </div>
+    <div class="footer">
+      <i class="fas fa-feather-alt"></i> Traditional Indian wedding · Reception follows <br/>
+      Kindly RSVP by 30th November 2025
+    </div>
+  </div>
+</div>
+
+<!-- Music player floating component with 15 sec snippet (Indian classical fusion) -->
+<div class="music-player" id="musicPlayer">
+  <button class="music-btn" id="playPauseBtn"><i class="fas fa-play"></i></button>
+  <div class="music-label"><i class="fas fa-dhol"></i> Wedding melody</div>
+  <div class="music-status" id="musicStatus">Tap to play</div>
+</div>
+
+<script>
+  // Creating an AudioContext approach to ensure small audio snippet with 15 seconds of authentic Indian wedding vibe.
+  // Since we need a small music 10-15 secs, we generate a web audio short melodic loop? No: Better use a Base64-encoded short audio snippet?
+  // But we can't embed an actual mp3 file without external hosting? However we can use Web Audio API to generate a beautiful tanpura / shehnai like simple but elegant waveform? 
+  // For a real wedding feel, we embed a short dataURI WAV? That's heavy. Instead we will use an external royalty-free short sample? That requires hosting mp3? 
+  // Alternatively use simple oscillator with nice scale (Carnatic style) to produce a 12 second melodic drone with sitar-like envelope? 
+  // To keep it fully self-contained and no external network requests, we will generate a pleasant harmonic drone using Web Audio API with Indian raga inspired notes.
+  // It's elegant, professional, no download delays, fully legal, and perfect for modern web invite. Duration ~13 seconds and loops? We'll design non-loop but can replay.
+  // The user can click play/pause, and it will play once (like a small invocation) ~ 14 seconds.
+  
+  let audioContext = null;
+  let isPlaying = false;
+  let scheduledSources = [];
+  let currentTimeout = null;
+  let gainNode = null;
+  
+  // Function to stop all active sound sources gracefully
+  function stopAllSounds() {
+    if (currentTimeout) {
+      clearTimeout(currentTimeout);
+      currentTimeout = null;
+    }
+    for (let src of scheduledSources) {
+      try {
+        src.stop();
+      } catch(e) {}
+    }
+    scheduledSources = [];
+    if (gainNode) {
+      // quick fade-out (optional)
+      if (gainNode.gain && gainNode.gain.value) {
+        gainNode.gain.setValueAtTime(gainNode.gain.value, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.2);
+      }
+    }
+    isPlaying = false;
+    updateUI(false);
+  }
+  
+  // Create Indian wedding melody (short rhythmic piece with shehnai-like sound and drone)
+  function createWeddingTune() {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    // Resume context if suspended (browser autoplay policy)
+    if (audioContext.state === 'suspended') {
+      audioContext.resume();
+    }
+    
+    stopAllSounds(); // clear previous
+    
+    gainNode = audioContext.createGain();
+    gainNode.gain.setValueAtTime(0.65, audioContext.currentTime);
+    gainNode.connect(audioContext.destination);
+    
+    const now = audioContext.currentTime;
+    let startTime = now;
+    // total duration = ~13.5 sec, fades out at end.
+    const totalDuration = 13.8;
+    
+    // 1. Tambura / Tanpura drone: Using sine oscillators for Sa and Pa
+    const droneFreq1 = 220.0;   // A3 - Sa (Carnatic base)
+    const droneFreq2 = 329.628; // E4 - Pa approx
+    
+    const drone1 = audioContext.createOscillator();
+    const drone2 = audioContext.createOscillator();
+    drone1.type = 'sine';
+    drone2.type = 'sine';
+    drone1.frequency.value = droneFreq1;
+    drone2.frequency.value = droneFreq2;
+    
+    const droneGain = audioContext.createGain();
+    droneGain.gain.setValueAtTime(0.2, startTime);
+    droneGain.gain.exponentialRampToValueAtTime(0.18, startTime + totalDuration);
+    drone1.connect(droneGain);
+    drone2.connect(droneGain);
+    droneGain.connect(gainNode);
+    
+    drone1.start(startTime);
+    drone2.start(startTime);
+    scheduledSources.push(drone1, drone2);
+    
+    // 2. Melody: Simulating shehnai/ flute using triangle wave with bandpass filter to sound ethnic
+    // Raga Bhupali style notes: S R G P D S' (C D E G A C)
+    const notes = [
+      { freq: 261.63, duration: 0.9, startOffset: 0.3 },  // C4 (Sa)
+      { freq: 293.66, duration: 0.8, startOffset: 1.3 },  // D4 (Re)
+      { freq: 329.63, duration: 0.9, startOffset: 2.2 },  // E4 (Ga)
+      { freq: 392.00, duration: 1.0, startOffset: 3.2 },  // G4 (Pa)
+      { freq: 440.00, duration: 1.2, startOffset: 4.4 },  // A4 (Dha)
+      { freq: 523.25, duration: 1.5, startOffset: 5.8 },  // C5 (Sa')
+      { freq: 440.00, duration: 0.8, startOffset: 7.5 },  // back Dha
+      { freq: 392.00, duration: 0.9, startOffset: 8.5 },  // Pa
+      { freq: 329.63, duration: 1.2, startOffset: 9.5 },  // Ga
+      { freq: 293.66, duration: 1.0, startOffset: 10.9 }, // Re
+      { freq: 261.63, duration: 1.5, startOffset: 12.0 }  // Sa ending
+    ];
+    
+    // add some rhythmic tabla-like pulse using noise with short envelope
+    const createTablaHit = (time, intensity) => {
+      const noise = audioContext.createBufferSource();
+      const bufferSize = audioContext.sampleRate * 0.15;
+      const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() - 0.5) * 1.2;
+      }
+      noise.buffer = buffer;
+      const hitGain = audioContext.createGain();
+      hitGain.gain.setValueAtTime(intensity, time);
+      hitGain.gain.exponentialRampToValueAtTime(0.001, time + 0.2);
+      noise.connect(hitGain);
+      hitGain.connect(gainNode);
+      noise.start(time);
+      scheduledSources.push(noise);
+    };
+    
+    // Shehnai voice: create oscillator + filter
+    notes.forEach(note => {
+      const osc = audioContext.createOscillator();
+      const filter = audioContext.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 900;
+      filter.Q.value = 7;
+      const noteGain = audioContext.createGain();
+      noteGain.gain.setValueAtTime(0, startTime + note.startOffset);
+      noteGain.gain.linearRampToValueAtTime(0.32, startTime + note.startOffset + 0.05);
+      noteGain.gain.exponentialRampToValueAtTime(0.25, startTime + note.startOffset + note.duration - 0.1);
+      noteGain.gain.linearRampToValueAtTime(0.0001, startTime + note.startOffset + note.duration);
+      
+      osc.type = 'triangle';
+      osc.frequency.value = note.freq;
+      osc.connect(filter);
+      filter.connect(noteGain);
+      noteGain.connect(gainNode);
+      osc.start(startTime + note.startOffset);
+      osc.stop(startTime + note.startOffset + note.duration);
+      scheduledSources.push(osc);
+    });
+    
+    // Tabla rhythm pattern at 120 bpm: 8th notes
+    const tablaTimes = [0.2, 0.7, 1.0, 1.5, 2.0, 2.6, 3.0, 3.7, 4.2, 4.9, 5.4, 6.0, 6.7, 7.3, 7.9, 8.4, 9.0, 9.6, 10.2, 10.8, 11.5, 12.2, 12.8];
+    tablaTimes.forEach(t => {
+      if (t < totalDuration) {
+        const intensity = (t < 5) ? 0.2 : 0.18;
+        createTablaHit(startTime + t, intensity);
+      }
+    });
+    
+    // gentle manjeera (cymbals) at key accents
+    const accentTimes = [0.5, 2.1, 4.0, 6.2, 8.0, 10.5, 12.4];
+    accentTimes.forEach(acc => {
+      if (acc < totalDuration) {
+        const cymbal = audioContext.createOscillator();
+        const cymbalGain = audioContext.createGain();
+        cymbal.type = 'sine';
+        cymbal.frequency.value = 2100;
+        cymbalGain.gain.setValueAtTime(0.09, startTime + acc);
+        cymbalGain.gain.exponentialRampToValueAtTime(0.0001, startTime + acc + 0.25);
+        cymbal.connect(cymbalGain);
+        cymbalGain.connect(gainNode);
+        cymbal.start(startTime + acc);
+        cymbal.stop(startTime + acc + 0.3);
+        scheduledSources.push(cymbal);
+      }
+    });
+    
+    // fade out master volume towards end
+    gainNode.gain.setValueAtTime(0.65, startTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + totalDuration);
+    
+    // auto-stop after totalDuration and reset UI
+    currentTimeout = setTimeout(() => {
+      if (isPlaying) {
+        stopAllSounds();
+        updateUI(false);
+        if (audioContext) {
+          // suspend after stopping to save power but keep context
+          if (audioContext.state === 'running') audioContext.suspend();
+        }
+        isPlaying = false;
+      }
+    }, totalDuration * 1000);
+    
+    isPlaying = true;
+    updateUI(true);
+  }
+  
+  // update play/pause button
+  function updateUI(playing) {
+    const btn = document.getElementById('playPauseBtn');
+    const statusSpan = document.getElementById('musicStatus');
+    if (playing) {
+      btn.innerHTML = '<i class="fas fa-stop"></i>';
+      statusSpan.innerHTML = '♪ playing 13s melody ♪';
+    } else {
+      btn.innerHTML = '<i class="fas fa-play"></i>';
+      statusSpan.innerHTML = 'Tap to play';
+    }
+  }
+  
+  // main play/pause toggle
+  async function toggleMusic() {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (isPlaying) {
+      stopAllSounds();
+      if (audioContext && audioContext.state === 'running') {
+        await audioContext.suspend();
+      }
+      updateUI(false);
+      isPlaying = false;
+    } else {
+      // resume audio context (handle autoplay)
+      if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
+      createWeddingTune();
+    }
+  }
+  
+  // attach event listener
+  const playBtn = document.getElementById('playPauseBtn');
+  playBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMusic();
+  });
+  
+  // optional: page visibility auto pause? not necessary but nice.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && isPlaying) {
+      // if page hidden, pause gracefully to save resources
+      if (audioContext && audioContext.state === 'running') {
+        stopAllSounds();
+        updateUI(false);
+        isPlaying = false;
+      }
+    }
+  });
+  
+  // ensure first interaction with any part of document might be needed? But user will click music button
+  // Also we show a welcome tooltip? fine
+  console.log('Indian wedding invite with 13 sec musical snippet ready');
+</script>
+</body>
+</html>
