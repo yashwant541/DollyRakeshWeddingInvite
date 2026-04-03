@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Ananya & Arjun | Indian Wedding Invitation</title>
-  <!-- Google Fonts for modern & elegant typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free icons) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Simran & Rakesh | Eternal Union</title>
+
+  <!-- Google Fonts + Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
     * {
       margin: 0;
@@ -16,649 +17,652 @@
     }
 
     body {
-      background: #fef7e8;  /* warm sand base */
-      font-family: 'Inter', sans-serif;
-      color: #3e2a27;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fefaf5;
+      color: #3e2c23;
+      text-align: center;
       scroll-behavior: smooth;
-    }
-
-    /* custom scroll */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f0e2cf;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #c9a87b;
-      border-radius: 10px;
-    }
-
-    /* main container */
-    .invitation {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fffaf3;
-      box-shadow: 0 0 40px rgba(0,0,0,0.03);
-      position: relative;
       overflow-x: hidden;
     }
 
-    /* floral/pattern decorative elements (subtle) */
-    .bg-pattern {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.08;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23b87333" d="M20,30 Q30,20 40,30 Q50,40 40,50 Q30,60 20,50 Q10,40 20,30Z M70,60 Q80,50 90,60 Q100,70 90,80 Q80,90 70,80 Q60,70 70,60Z M45,75 Q50,70 55,75 Q60,80 55,85 Q50,90 45,85 Q40,80 45,75Z"/></svg>');
-      background-repeat: repeat;
-      background-size: 48px;
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f0e4d0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d4af37;
+      border-radius: 10px;
     }
 
-    .content {
+    .script {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+    }
+
+    .gold {
+      color: #c9a03d;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    }
+
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Hero Section — high res gradient overlay + elegant */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(0,0,0,0.45), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format') center/cover no-repeat;
+      background-attachment: fixed;
       position: relative;
-      z-index: 2;
-      padding: 2rem 1.5rem 3rem;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
     }
 
-    /* music player pill */
-    .music-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 100;
-      background: rgba(255,245,235,0.95);
-      backdrop-filter: blur(8px);
+    /* fallback if unsplash fails – warm solid */
+    @media (max-width: 600px) {
+      .hero {
+        background: linear-gradient(135deg, #2a241e, #1e1712), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format') center/cover no-repeat;
+        background-blend-mode: overlay;
+      }
+    }
+
+    .overlay {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 20px;
+      backdrop-filter: brightness(0.96);
+      animation: fadeInUp 1.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h3 {
+      font-weight: 300;
+      letter-spacing: 6px;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(255,215,0,0.5);
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .hero .invite-blessing {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      opacity: 0.8;
+      animation: bounceSoft 2s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounceSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    /* sections */
+    .section {
+      padding: 80px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background: #fff9f2;
+      border-radius: 48px 48px 0 0;
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.02);
+    }
+
+    .couple-section {
+      background: linear-gradient(to bottom, #fefaf5, #fff4e8);
+      padding: 50px 24px 70px;
+    }
+
+    .names-main {
+      font-size: 4rem;
+      letter-spacing: 3px;
+    }
+
+    .ampersand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      color: #c9a03d;
+      margin: 0 8px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4af37, #b8860b, #d4af37, transparent);
+      margin: 24px auto;
+    }
+
+    /* event cards grid */
+    .events-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px 20px;
+      width: 280px;
+      transition: all 0.35s ease;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      backdrop-filter: blur(2px);
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 28px 36px -14px rgba(0, 0, 0, 0.2);
+      border-color: #d4af3766;
+    }
+
+    .icon-circle {
+      background: #f9efdf;
+      width: 80px;
+      height: 80px;
       border-radius: 60px;
-      padding: 10px 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+      color: #b8860b;
+      transition: 0.2s;
+    }
+
+    .card:hover .icon-circle {
+      background: #d4af3720;
+      transform: scale(1.02);
+    }
+
+    /* venue card special */
+    .venue-card {
+      max-width: 500px;
+      margin: 30px auto 0;
+      background: #ffffffea;
+    }
+
+    .btn-gold {
+      background: #d4af37;
+      border: none;
+      padding: 14px 32px;
+      font-weight: 600;
+      border-radius: 50px;
+      color: #2c1e16;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 6px 14px rgba(212, 175, 55, 0.3);
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-gold:hover {
+      background: #b48b2c;
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(180, 139, 44, 0.4);
+      color: white;
+    }
+
+    /* RSVP modern */
+    .rsvp-box {
+      background: white;
+      padding: 40px 32px;
+      border-radius: 44px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 25px 45px -18px rgba(0, 0, 0, 0.2);
+      border: 1px solid #eeddbb;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 40px;
+      border: 1.5px solid #ebddb0;
+      background: #fffcf7;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    textarea {
+      border-radius: 28px;
+      resize: vertical;
+    }
+
+    .rsvp-message {
+      font-size: 0.8rem;
+      margin-top: 16px;
+      color: #a0814e;
+    }
+
+    /* music widget premium */
+    .music-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #2c1c12e6;
+      backdrop-filter: blur(8px);
+      color: #fae7b3;
+      padding: 12px 20px;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 12px;
-      border: 1px solid #e7d5bf;
-      font-family: 'Inter', sans-serif;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.2s;
+      border: 1px solid #d4af3766;
     }
-    .music-btn {
-      background: #b3572e;
-      border: none;
-      color: white;
-      width: 38px;
-      height: 38px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.2s;
-      font-size: 1.1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .music-btn:hover {
-      background: #8e3e1c;
+
+    .music-widget:hover {
+      background: #3f2a1c;
       transform: scale(1.02);
     }
-    .music-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #7e5a41;
-      letter-spacing: 0.3px;
-    }
-    .music-status {
-      font-size: 0.7rem;
-      font-weight: 500;
-      background: #efe3d4;
-      padding: 4px 10px;
-      border-radius: 30px;
-      color: #ac6e48;
+
+    .music-widget i {
+      font-size: 1.4rem;
     }
 
-    /* header section */
-    .header {
-      text-align: center;
-      margin-bottom: 1.8rem;
-      padding-top: 1rem;
-    }
-    .saubhagya {
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #b87c4f;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    .couple-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #9b4b2c;
-      margin: 0.5rem 0;
-      line-height: 1.2;
-    }
-    .date-badge {
-      background: #f5e7db;
-      display: inline-block;
-      padding: 0.4rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
-      font-size: 0.85rem;
-      color: #b16238;
-      margin-top: 0.5rem;
-    }
-
-    /* traditional motif */
-    .mandala {
-      text-align: center;
-      font-size: 2rem;
-      letter-spacing: 8px;
-      color: #e1c094;
-      margin: 0.8rem 0;
-    }
-
-    /* invitation card */
-    .invite-card {
-      background: white;
-      border-radius: 32px;
-      padding: 1.8rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
-      border: 1px solid #f7ecdf;
-    }
-    .invite-text {
+    /* petals animation refined */
+    .petal {
+      position: fixed;
+      top: -15px;
+      pointer-events: none;
+      z-index: 9999;
       font-size: 1rem;
-      line-height: 1.5;
-      text-align: center;
-      color: #4b3621;
-    }
-    .sanskrit-shloka {
-      font-style: italic;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      background: #fff6ed;
-      padding: 0.8rem;
-      border-radius: 40px;
-      margin: 1rem 0;
-      color: #ad6b42;
+      opacity: 0.7;
+      animation: fallPetals linear forwards;
     }
 
-    /* event details grid */
-    .events {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .event-item {
-      background: #fef9f2;
-      border-radius: 28px;
-      padding: 1rem 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-      border: 1px solid #f5e5d6;
-      transition: all 0.2s;
-    }
-    .event-icon {
-      font-size: 2rem;
-      min-width: 50px;
-      text-align: center;
-      color: #c28254;
-    }
-    .event-detail h4 {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #7b3f20;
-    }
-    .event-detail p {
-      font-size: 0.85rem;
-      color: #876b54;
-      margin-top: 4px;
-    }
-
-    /* venue & map */
-    .venue {
-      background: linear-gradient(135deg, #fff3e8, #fffaf3);
-      border-radius: 32px;
-      padding: 1.5rem;
-      text-align: center;
-      margin: 1.2rem 0;
-      border: 1px solid #eedbcb;
-    }
-    .venue i {
-      font-size: 1.8rem;
-      color: #bc7a48;
-      margin-bottom: 0.5rem;
-    }
-    .venue h3 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .map-link {
-      display: inline-block;
-      margin-top: 12px;
-      background: #bc7a48;
-      color: white;
-      padding: 8px 22px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: 0.2s;
-    }
-    .map-link:hover {
-      background: #9d5d34;
-    }
-
-    /* rsvp section */
-    .rsvp {
-      background: #f9ede2;
-      border-radius: 32px;
-      padding: 1.8rem;
-      text-align: center;
-      margin: 1.5rem 0;
-    }
-    .rsvp h3 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #9c4d29;
-    }
-    .rsvp-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1.2rem 0;
-      flex-wrap: wrap;
-    }
-    .rsvp-btn {
-      background: white;
-      border: 1.5px solid #ccaa86;
-      padding: 8px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      color: #8b4f2c;
-      font-weight: 600;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .rsvp-btn i {
-      font-size: 0.9rem;
-    }
-    .rsvp-btn:hover {
-      background: #bc7a48;
-      color: white;
-      border-color: #bc7a48;
+    @keyframes fallPetals {
+      0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.2;
+      }
     }
 
     /* footer */
     .footer {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #b59379;
-      padding: 2rem 0 0.5rem;
-      border-top: 1px solid #f2e3d4;
-      margin-top: 2rem;
+      background: #2a1f17;
+      color: #e9cf94;
+      padding: 48px 24px;
+      margin-top: 40px;
+      border-top: 3px solid #c9a03d;
     }
 
-    /* responsive fine-tune */
-    @media (max-width: 480px) {
-      .content {
-        padding: 1.2rem 1rem 2rem;
-      }
-      .couple-name {
-        font-size: 2rem;
-      }
-      .invite-card {
-        padding: 1.2rem;
-      }
-      .music-player {
-        bottom: 12px;
-        right: 12px;
-        padding: 6px 14px;
-      }
+    .footer .script {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
     }
-    button {
-      background: none;
-      border: none;
+
+    /* toast / notif */
+    .toast-msg {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2c2b26e6;
+      backdrop-filter: blur(12px);
+      color: #ffecb3;
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      z-index: 1100;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .names-main { font-size: 2.6rem; }
+      .hero .invite-blessing { font-size: 1.3rem; }
+      .card { width: 100%; max-width: 320px; }
+      .section { padding: 60px 16px; }
     }
   </style>
 </head>
 <body>
-<div class="bg-pattern"></div>
-<div class="invitation">
-  <div class="content">
-    <!-- Header -->
-    <div class="header">
-      <div class="saubhagya">शुभ विवाह</div>
-      <div class="mandala">✧ ॐ ✧</div>
-      <div class="couple-name">Ananya & Arjun</div>
-      <div class="date-badge"><i class="fas fa-calendar-alt" style="margin-right: 6px;"></i> Saturday, 14th December 2025</div>
-    </div>
 
-    <!-- invitation card with heartfelt message -->
-    <div class="invite-card">
-      <div class="invite-text">
-        With blessings of <strong>Mata Rani</strong> & family elders,<br/>
-        we cordially invite you to celebrate our sacred union.
-      </div>
-      <div class="sanskrit-shloka">
-        “विवाह संस्कार: संस्काराणां मूलम्” <br/> 
-        ~ Togetherness begins forever ~
-      </div>
-      <div class="invite-text">
-        Join us as we exchange vows, share laughter, and begin our journey of togetherness.
-      </div>
-    </div>
+  <!-- Audio element with reliable track (royalty-free love instrumental) -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- fallback note: replaced with legal demo track that works universally, but if needed you can switch to your own -->
+  </audio>
 
-    <!-- Wedding events timeline -->
-    <div class="events">
-      <div class="event-item">
-        <div class="event-icon"><i class="fas fa-om"></i></div>
-        <div class="event-detail">
-          <h4>Ganesh Pooja & Mehendi</h4>
-          <p>13th Dec, 6:00 PM · Lawns, Jaipur</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon"><i class="fas fa-ring"></i></div>
-        <div class="event-detail">
-          <h4>Wedding Ceremony</h4>
-          <p>14th Dec, 8:30 PM · Mandap, The Royal Orchid</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon"><i class="fas fa-utensils"></i></div>
-        <div class="event-detail">
-          <h4>Reception & Dinner</h4>
-          <p>15th Dec, 7:00 PM · Grand Garden, Jaipur</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Venue + map link (static but realistic google maps) -->
-    <div class="venue">
-      <i class="fas fa-map-marker-alt"></i>
-      <h3>The Royal Orchid & Lawns</h3>
-      <p>Jawahar Lal Nehru Marg, Jaipur, Rajasthan - 302002</p>
-      <a href="https://maps.google.com/?q=The+Royal+Orchid+Jaipur" target="_blank" class="map-link"><i class="fas fa-directions"></i> Get Directions</a>
-    </div>
-
-    <!-- RSVP quick contact (Indian style) -->
-    <div class="rsvp">
-      <h3>RSVP & Blessings</h3>
-      <p style="margin-bottom: 6px;">Kindly grace us with your presence</p>
-      <div class="rsvp-buttons">
-        <a href="tel:+919876543210" class="rsvp-btn"><i class="fas fa-phone-alt"></i> Call</a>
-        <a href="https://wa.me/919876543210?text=Excited%20to%20attend%20Ananya%20%26%20Arjun's%20wedding!" class="rsvp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      </div>
-      <div class="invite-text" style="font-size: 0.75rem; margin-top: 10px;">
-        <i class="fas fa-heart" style="color:#c28254;"></i> Family hosts: Mr. & Mrs. Sharma & Mr. & Mrs. Rathore
-      </div>
-    </div>
-    <div class="footer">
-      <i class="fas fa-feather-alt"></i> Traditional Indian wedding · Reception follows <br/>
-      Kindly RSVP by 30th November 2025
-    </div>
+  <div class="music-widget" id="musicBtn">
+    <i class="fas fa-music"></i> 
+    <span id="musicText">Play Melody</span>
   </div>
-</div>
 
-<!-- Music player floating component with 15 sec snippet (Indian classical fusion) -->
-<div class="music-player" id="musicPlayer">
-  <button class="music-btn" id="playPauseBtn"><i class="fas fa-play"></i></button>
-  <div class="music-label"><i class="fas fa-dhol"></i> Wedding melody</div>
-  <div class="music-status" id="musicStatus">Tap to play</div>
-</div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay">
+      <h3>SAVE THE DATE</h3>
+      <div class="script invite-blessing gold">श्री गणेशाय नमः</div>
+      <div class="divider" style="background: rgba(212,175,55,0.6); width: 60px;"></div>
+      <p style="margin-top: 20px; max-width: 400px; font-weight: 300;">Together with our families, we invite you to celebrate the union of two souls</p>
+      <div class="scroll-hint" onclick="document.querySelector('.couple-section').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-chevron-down"></i> scroll
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Creating an AudioContext approach to ensure small audio snippet with 15 seconds of authentic Indian wedding vibe.
-  // Since we need a small music 10-15 secs, we generate a web audio short melodic loop? No: Better use a Base64-encoded short audio snippet?
-  // But we can't embed an actual mp3 file without external hosting? However we can use Web Audio API to generate a beautiful tanpura / shehnai like simple but elegant waveform? 
-  // For a real wedding feel, we embed a short dataURI WAV? That's heavy. Instead we will use an external royalty-free short sample? That requires hosting mp3? 
-  // Alternatively use simple oscillator with nice scale (Carnatic style) to produce a 12 second melodic drone with sitar-like envelope? 
-  // To keep it fully self-contained and no external network requests, we will generate a pleasant harmonic drone using Web Audio API with Indian raga inspired notes.
-  // It's elegant, professional, no download delays, fully legal, and perfect for modern web invite. Duration ~13 seconds and loops? We'll design non-loop but can replay.
-  // The user can click play/pause, and it will play once (like a small invocation) ~ 14 seconds.
-  
-  let audioContext = null;
-  let isPlaying = false;
-  let scheduledSources = [];
-  let currentTimeout = null;
-  let gainNode = null;
-  
-  // Function to stop all active sound sources gracefully
-  function stopAllSounds() {
-    if (currentTimeout) {
-      clearTimeout(currentTimeout);
-      currentTimeout = null;
+  <!-- Couple names section -->
+  <section class="couple-section">
+    <div class="script gold" style="font-size: 1.6rem;">The Wedding Of</div>
+    <h1 class="names-main" style="margin-top: 8px;">
+      <span class="serif">Rakesh</span>
+      <span class="ampersand">&</span>
+      <span class="serif">Simran</span>
+    </h1>
+    <div class="divider"></div>
+    <p style="max-width: 480px; margin: 16px auto 0; font-style: italic;">"Two hearts, one love story — forever begins here."</p>
+  </section>
+
+  <!-- Events -->
+  <section class="section" id="events">
+    <h2 class="gold" style="font-size: 2.2rem;">✨ Wedding Celebrations ✨</h2>
+    <div class="events-grid">
+      <div class="card">
+        <div class="icon-circle"><i class="fas fa-leaf"></i></div>
+        <h3>Mehendi</h3>
+        <p style="margin: 8px 0;">Henna & Festive Rhythms</p>
+        <p class="gold"><i class="far fa-calendar-alt"></i> 26 April 2026</p>
+        <small>6:00 PM onwards</small>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i class="fas fa-smile-wink"></i></div>
+        <h3>Haldi</h3>
+        <p>Turmeric & Blessings</p>
+        <p class="gold"><i class="far fa-calendar-alt"></i> 27 April 2026</p>
+        <small>9:00 AM - 12:00 PM</small>
+      </div>
+      <div class="card">
+        <div class="icon-circle"><i class="fas fa-ring"></i></div>
+        <h3>Wedding</h3>
+        <p>Sacred Vows & Celebration</p>
+        <p class="gold"><i class="far fa-calendar-alt"></i> 28 April 2026</p>
+        <small>Evening 7:30 PM</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue Section with better map -->
+  <section class="section section-alt">
+    <h3 class="gold" style="font-size: 1.8rem;"><i class="fas fa-map-marker-alt"></i> The Grand Venue</h3>
+    <div class="venue-card card" style="max-width:560px;">
+      <i class="fas fa-hotel" style="font-size: 44px; color:#c9a03d;"></i>
+      <h3 style="margin: 12px 0 4px;">Fortune Hotel ITC · Palm Beach Road</h3>
+      <p>Panvel, Navi Mumbai | Grand Ballroom</p>
+      <button class="btn-gold" id="mapBtn"><i class="fas fa-location-dot"></i> Get Directions</button>
+      <p style="margin-top: 15px; font-size: 13px;">📍 Valet parking available · Traditional welcome</p>
+    </div>
+  </section>
+
+  <!-- RSVP Improved with JS confirmation -->
+  <section class="section" id="rsvp">
+    <h2 class="gold" style="font-size: 2rem;">🌹 Share Your Presence 🌹</h2>
+    <p style="margin-bottom: 28px;">Kindly RSVP by 15th April 2026</p>
+    <div class="rsvp-box">
+      <div class="input-group">
+        <input type="text" id="guestName" placeholder="Full Name *" required>
+      </div>
+      <div class="input-group">
+        <input type="number" id="guestCount" placeholder="Number of guests (including you)" min="1" max="6">
+      </div>
+      <div class="input-group">
+        <textarea id="message" rows="2" placeholder="Any special message / dietary preference..."></textarea>
+      </div>
+      <button class="btn-gold" id="rsvpConfirmBtn" style="width: 100%; justify-content: center;"><i class="fas fa-check-circle"></i> Confirm Attendance</button>
+      <div class="rsvp-message">✨ We look forward to celebrating with you ✨</div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <h2 class="script">Simran & Rakesh</h2>
+    <p>With gratitude and joy, we await your blessings</p>
+    <div style="margin-top: 18px;">
+      <i class="fas fa-heart" style="color:#d4af37; margin:0 5px;"></i>
+      <i class="fas fa-infinity"></i>
+      <i class="fas fa-heart" style="color:#d4af37; margin:0 5px;"></i>
+    </div>
+    <p style="margin-top: 24px; font-size: 12px;">© 2026 Eternal Union</p>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastMsg" class="toast-msg">✨ RSVP sent successfully ✨</div>
+
+  <script>
+    // ------------------------------
+    // 1. Music Playback (user interaction friendly)
+    // ------------------------------
+    const audio = document.getElementById('weddingMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicTextSpan = document.getElementById('musicText');
+    let isPlaying = false;
+
+    function playMusic() {
+      audio.play().then(() => {
+        isPlaying = true;
+        musicTextSpan.innerText = 'Playing ♪';
+        musicBtn.style.background = "#d4af37dd";
+        musicBtn.style.color = "#2c1c12";
+      }).catch((err) => {
+        console.log("Autoplay blocked, but button click works:", err);
+        // fallback: show toast
+        showToast("🔊 Click again to enable music", 1800);
+      });
     }
-    for (let src of scheduledSources) {
-      try {
-        src.stop();
-      } catch(e) {}
-    }
-    scheduledSources = [];
-    if (gainNode) {
-      // quick fade-out (optional)
-      if (gainNode.gain && gainNode.gain.value) {
-        gainNode.gain.setValueAtTime(gainNode.gain.value, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.2);
-      }
-    }
-    isPlaying = false;
-    updateUI(false);
-  }
-  
-  // Create Indian wedding melody (short rhythmic piece with shehnai-like sound and drone)
-  function createWeddingTune() {
-    if (!audioContext) {
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    // Resume context if suspended (browser autoplay policy)
-    if (audioContext.state === 'suspended') {
-      audioContext.resume();
-    }
-    
-    stopAllSounds(); // clear previous
-    
-    gainNode = audioContext.createGain();
-    gainNode.gain.setValueAtTime(0.65, audioContext.currentTime);
-    gainNode.connect(audioContext.destination);
-    
-    const now = audioContext.currentTime;
-    let startTime = now;
-    // total duration = ~13.5 sec, fades out at end.
-    const totalDuration = 13.8;
-    
-    // 1. Tambura / Tanpura drone: Using sine oscillators for Sa and Pa
-    const droneFreq1 = 220.0;   // A3 - Sa (Carnatic base)
-    const droneFreq2 = 329.628; // E4 - Pa approx
-    
-    const drone1 = audioContext.createOscillator();
-    const drone2 = audioContext.createOscillator();
-    drone1.type = 'sine';
-    drone2.type = 'sine';
-    drone1.frequency.value = droneFreq1;
-    drone2.frequency.value = droneFreq2;
-    
-    const droneGain = audioContext.createGain();
-    droneGain.gain.setValueAtTime(0.2, startTime);
-    droneGain.gain.exponentialRampToValueAtTime(0.18, startTime + totalDuration);
-    drone1.connect(droneGain);
-    drone2.connect(droneGain);
-    droneGain.connect(gainNode);
-    
-    drone1.start(startTime);
-    drone2.start(startTime);
-    scheduledSources.push(drone1, drone2);
-    
-    // 2. Melody: Simulating shehnai/ flute using triangle wave with bandpass filter to sound ethnic
-    // Raga Bhupali style notes: S R G P D S' (C D E G A C)
-    const notes = [
-      { freq: 261.63, duration: 0.9, startOffset: 0.3 },  // C4 (Sa)
-      { freq: 293.66, duration: 0.8, startOffset: 1.3 },  // D4 (Re)
-      { freq: 329.63, duration: 0.9, startOffset: 2.2 },  // E4 (Ga)
-      { freq: 392.00, duration: 1.0, startOffset: 3.2 },  // G4 (Pa)
-      { freq: 440.00, duration: 1.2, startOffset: 4.4 },  // A4 (Dha)
-      { freq: 523.25, duration: 1.5, startOffset: 5.8 },  // C5 (Sa')
-      { freq: 440.00, duration: 0.8, startOffset: 7.5 },  // back Dha
-      { freq: 392.00, duration: 0.9, startOffset: 8.5 },  // Pa
-      { freq: 329.63, duration: 1.2, startOffset: 9.5 },  // Ga
-      { freq: 293.66, duration: 1.0, startOffset: 10.9 }, // Re
-      { freq: 261.63, duration: 1.5, startOffset: 12.0 }  // Sa ending
-    ];
-    
-    // add some rhythmic tabla-like pulse using noise with short envelope
-    const createTablaHit = (time, intensity) => {
-      const noise = audioContext.createBufferSource();
-      const bufferSize = audioContext.sampleRate * 0.15;
-      const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() - 0.5) * 1.2;
-      }
-      noise.buffer = buffer;
-      const hitGain = audioContext.createGain();
-      hitGain.gain.setValueAtTime(intensity, time);
-      hitGain.gain.exponentialRampToValueAtTime(0.001, time + 0.2);
-      noise.connect(hitGain);
-      hitGain.connect(gainNode);
-      noise.start(time);
-      scheduledSources.push(noise);
-    };
-    
-    // Shehnai voice: create oscillator + filter
-    notes.forEach(note => {
-      const osc = audioContext.createOscillator();
-      const filter = audioContext.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.value = 900;
-      filter.Q.value = 7;
-      const noteGain = audioContext.createGain();
-      noteGain.gain.setValueAtTime(0, startTime + note.startOffset);
-      noteGain.gain.linearRampToValueAtTime(0.32, startTime + note.startOffset + 0.05);
-      noteGain.gain.exponentialRampToValueAtTime(0.25, startTime + note.startOffset + note.duration - 0.1);
-      noteGain.gain.linearRampToValueAtTime(0.0001, startTime + note.startOffset + note.duration);
-      
-      osc.type = 'triangle';
-      osc.frequency.value = note.freq;
-      osc.connect(filter);
-      filter.connect(noteGain);
-      noteGain.connect(gainNode);
-      osc.start(startTime + note.startOffset);
-      osc.stop(startTime + note.startOffset + note.duration);
-      scheduledSources.push(osc);
-    });
-    
-    // Tabla rhythm pattern at 120 bpm: 8th notes
-    const tablaTimes = [0.2, 0.7, 1.0, 1.5, 2.0, 2.6, 3.0, 3.7, 4.2, 4.9, 5.4, 6.0, 6.7, 7.3, 7.9, 8.4, 9.0, 9.6, 10.2, 10.8, 11.5, 12.2, 12.8];
-    tablaTimes.forEach(t => {
-      if (t < totalDuration) {
-        const intensity = (t < 5) ? 0.2 : 0.18;
-        createTablaHit(startTime + t, intensity);
-      }
-    });
-    
-    // gentle manjeera (cymbals) at key accents
-    const accentTimes = [0.5, 2.1, 4.0, 6.2, 8.0, 10.5, 12.4];
-    accentTimes.forEach(acc => {
-      if (acc < totalDuration) {
-        const cymbal = audioContext.createOscillator();
-        const cymbalGain = audioContext.createGain();
-        cymbal.type = 'sine';
-        cymbal.frequency.value = 2100;
-        cymbalGain.gain.setValueAtTime(0.09, startTime + acc);
-        cymbalGain.gain.exponentialRampToValueAtTime(0.0001, startTime + acc + 0.25);
-        cymbal.connect(cymbalGain);
-        cymbalGain.connect(gainNode);
-        cymbal.start(startTime + acc);
-        cymbal.stop(startTime + acc + 0.3);
-        scheduledSources.push(cymbal);
-      }
-    });
-    
-    // fade out master volume towards end
-    gainNode.gain.setValueAtTime(0.65, startTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + totalDuration);
-    
-    // auto-stop after totalDuration and reset UI
-    currentTimeout = setTimeout(() => {
-      if (isPlaying) {
-        stopAllSounds();
-        updateUI(false);
-        if (audioContext) {
-          // suspend after stopping to save power but keep context
-          if (audioContext.state === 'running') audioContext.suspend();
-        }
-        isPlaying = false;
-      }
-    }, totalDuration * 1000);
-    
-    isPlaying = true;
-    updateUI(true);
-  }
-  
-  // update play/pause button
-  function updateUI(playing) {
-    const btn = document.getElementById('playPauseBtn');
-    const statusSpan = document.getElementById('musicStatus');
-    if (playing) {
-      btn.innerHTML = '<i class="fas fa-stop"></i>';
-      statusSpan.innerHTML = '♪ playing 13s melody ♪';
-    } else {
-      btn.innerHTML = '<i class="fas fa-play"></i>';
-      statusSpan.innerHTML = 'Tap to play';
-    }
-  }
-  
-  // main play/pause toggle
-  async function toggleMusic() {
-    if (!audioContext) {
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    if (isPlaying) {
-      stopAllSounds();
-      if (audioContext && audioContext.state === 'running') {
-        await audioContext.suspend();
-      }
-      updateUI(false);
+
+    function pauseMusic() {
+      audio.pause();
       isPlaying = false;
-    } else {
-      // resume audio context (handle autoplay)
-      if (audioContext.state === 'suspended') {
-        await audioContext.resume();
-      }
-      createWeddingTune();
+      musicTextSpan.innerText = 'Play Melody';
+      musicBtn.style.background = "#2c1c12e6";
+      musicBtn.style.color = "#fae7b3";
     }
-  }
-  
-  // attach event listener
-  const playBtn = document.getElementById('playPauseBtn');
-  playBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleMusic();
-  });
-  
-  // optional: page visibility auto pause? not necessary but nice.
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && isPlaying) {
-      // if page hidden, pause gracefully to save resources
-      if (audioContext && audioContext.state === 'running') {
-        stopAllSounds();
-        updateUI(false);
-        isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        pauseMusic();
+      } else {
+        playMusic();
       }
+    });
+
+    // optional: background autoplay not allowed, but we ensure music works after any tap.
+    // preload audio and ensure it's ready.
+    audio.load();
+
+    // ------------------------------
+    // 2. Google Maps (precise location)
+    // ------------------------------
+    function openMap() {
+      const venueQuery = "Fortune Hotel ITC Palm Beach Road Navi Mumbai";
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueQuery)}`, '_blank');
     }
-  });
-  
-  // ensure first interaction with any part of document might be needed? But user will click music button
-  // Also we show a welcome tooltip? fine
-  console.log('Indian wedding invite with 13 sec musical snippet ready');
-</script>
+    document.getElementById('mapBtn').addEventListener('click', openMap);
+
+    // ------------------------------
+    // 3. RSVP with Validation & Toast
+    // ------------------------------
+    const rsvpBtn = document.getElementById('rsvpConfirmBtn');
+    const toastDiv = document.getElementById('toastMsg');
+    let toastTimeout;
+
+    function showToast(message, duration = 2800) {
+      toastDiv.innerText = message;
+      toastDiv.style.opacity = '1';
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toastDiv.style.opacity = '0';
+      }, duration);
+    }
+
+    rsvpBtn.addEventListener('click', () => {
+      const nameInput = document.getElementById('guestName');
+      const guestCountInput = document.getElementById('guestCount');
+      const messageArea = document.getElementById('message');
+
+      let name = nameInput.value.trim();
+      let guestCount = guestCountInput.value.trim();
+      let userMsg = messageArea.value.trim();
+
+      if (name === "") {
+        showToast("❌ Please enter your name", 2000);
+        nameInput.style.borderColor = "#e0a800";
+        setTimeout(() => nameInput.style.borderColor = "#ebddb0", 1500);
+        return;
+      }
+
+      let countNum = guestCount === "" ? 1 : parseInt(guestCount);
+      if (isNaN(countNum) || countNum < 1) countNum = 1;
+      if (countNum > 12) {
+        showToast("👨‍👩‍👧‍👦 For more than 12 guests, kindly contact the hosts directly.", 3000);
+        return;
+      }
+
+      // Save to localStorage (optional demo)
+      const rsvpRecord = {
+        name: name,
+        guests: countNum,
+        message: userMsg || "No message",
+        timestamp: new Date().toLocaleString()
+      };
+      let stored = localStorage.getItem("wedding_rsvp");
+      let rsvpList = stored ? JSON.parse(stored) : [];
+      rsvpList.push(rsvpRecord);
+      localStorage.setItem("wedding_rsvp", JSON.stringify(rsvpList));
+
+      // show confirmation
+      showToast(`🎉 Thank you ${name}! We're delighted to welcome you${countNum > 1 ? ` + ${countNum-1} guests` : ''}.`, 3200);
+
+      // clear form for next but preserve positive sentiment
+      nameInput.value = '';
+      guestCountInput.value = '';
+      messageArea.value = '';
+
+      // Add subtle animation celebration effect on RSVP
+      rsvpBtn.style.transform = "scale(0.98)";
+      setTimeout(() => { rsvpBtn.style.transform = ""; }, 200);
+    });
+
+    // ------------------------------
+    // 4. Premium Falling Petals (enhanced with golden elements)
+    // ------------------------------
+    function createPetal() {
+      const petalEl = document.createElement('div');
+      petalEl.classList.add('petal');
+      // Using fontawesome/unicode flower symbols instead of plain circles
+      const flowers = ['🌸', '🌼', '🌺', '✨', '🍂', '🌸', '🌿'];
+      const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
+      petalEl.innerHTML = randomFlower;
+      petalEl.style.left = Math.random() * 100 + 'vw';
+      petalEl.style.fontSize = (12 + Math.random() * 18) + 'px';
+      const duration = 5 + Math.random() * 9;
+      petalEl.style.animationDuration = duration + 's';
+      petalEl.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(petalEl);
+      setTimeout(() => {
+        if(petalEl && petalEl.remove) petalEl.remove();
+      }, duration * 1000);
+    }
+
+    // create petals periodically
+    let petalInterval;
+    function startPetals() {
+      if(petalInterval) clearInterval(petalInterval);
+      petalInterval = setInterval(() => {
+        if(document.hasFocus() || true) {
+          createPetal();
+        }
+      }, 450);
+      // initial 10 petals
+      for(let i=0;i<16;i++) setTimeout(() => createPetal(), i*120);
+    }
+    startPetals();
+
+    // Reduce petals when scrolling performance is fine, but we keep dynamic
+    window.addEventListener('resize', () => {});
+
+    // 5. Improve hero scroll hint + nice smooth click to couple section
+    const scrollHint = document.querySelector('.scroll-hint');
+    if(scrollHint) {
+      scrollHint.addEventListener('click', () => {
+        document.querySelector('.couple-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // 6. small easter egg: if user double clicks hero, play music
+    const heroDiv = document.querySelector('.hero');
+    if(heroDiv) {
+      heroDiv.addEventListener('dblclick', () => {
+        if(!isPlaying) playMusic();
+        else pauseMusic();
+        showToast(isPlaying ? "🎵 Music paused" : "🎶 Melody starts", 1200);
+      });
+    }
+
+    // 7. Fix local image path -> replaced with high-quality unsplash love theme
+    // already updated in hero background to a reliable unsplash URL (public domain styled)
+    // Also we remove any broken reference.
+    console.log("✨ Simran & Rakesh Wedding — improved elegance loaded");
+  </script>
 </body>
 </html>
