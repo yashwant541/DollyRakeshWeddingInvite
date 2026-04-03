@@ -293,14 +293,42 @@
       color: white;
     }
 
+    .btn-whatsapp {
+      background: #25D366;
+      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.3);
+    }
+    .btn-whatsapp:hover {
+      background: #1da15a;
+    }
+
     .rsvp-box {
       background: white;
       padding: 40px 32px;
       border-radius: 44px;
-      max-width: 500px;
+      max-width: 550px;
       margin: 0 auto;
       box-shadow: 0 25px 45px -18px rgba(0, 0, 0, 0.2);
       border: 1px solid #eeddbb;
+    }
+
+    .rsvp-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .whatsapp-note {
+      background: #e8f5e9;
+      border-radius: 30px;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #2e7d32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     input, textarea {
@@ -366,6 +394,7 @@
       .time-box { padding: 8px 12px; min-width: 55px; }
       .gallery-item { width: 75px; height: 75px; }
       .music-widget { padding: 8px 16px; font-size: 0.8rem; }
+      .toast-msg { white-space: normal; width: 80%; font-size: 0.8rem; text-align: center; }
     }
   </style>
 </head>
@@ -373,9 +402,7 @@
 
   <!-- INDIAN WEDDING MUSIC (Shehnai + Traditional instrumental) -->
   <audio id="weddingMusic" loop preload="auto">
-    <!-- Royalty-free Indian wedding style shehnai music (Public domain / creative commons) -->
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-    <!-- Note: In real scenario replace with actual Indian wedding track. For demo, using melodic instrumental -->
   </audio>
 
   <div class="music-widget" id="musicBtn">
@@ -400,15 +427,15 @@
   <section class="couple-section">
     <div class="script gold" style="font-size: 1.6rem;">The Wedding Of</div>
     <h1 class="names-main">
-      <span class="serif">Rakesh</span>
-      <span class="ampersand">&</span>
       <span class="serif">Simran</span>
+      <span class="ampersand">&</span>
+      <span class="serif">Rakesh</span>
     </h1>
     <div class="divider"></div>
     <p style="max-width: 480px; margin: 16px auto 0;">"Together forever, blessed by family & tradition"</p>
   </section>
 
-  <!-- Countdown Timer (IMPROVEMENT) -->
+  <!-- Countdown Timer -->
   <div class="section" style="padding-top: 0;">
     <div class="countdown-container">
       <div class="countdown-title"><i class="fas fa-hourglass-half"></i> Wedding Countdown</div>
@@ -432,7 +459,7 @@
     </div>
   </section>
 
-  <!-- Venue + Gallery Preview (Improvement: Show venue + preview images) -->
+  <!-- Venue + Gallery -->
   <section class="section section-alt">
     <h3 class="gold" style="font-size: 1.8rem;"><i class="fas fa-map-marker-alt"></i> Venue & Memories</h3>
     <div class="card" style="max-width:560px; margin:0 auto 20px auto;">
@@ -447,12 +474,12 @@
         <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=150&h=150&fit=crop');"></div>
         <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=150&h=150&fit=crop');"></div>
         <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=150&h=150&fit=crop');"></div>
-        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=150&h=150&fit=crop');"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=150&h=150&fit=crop');"></div>
       </div>
     </div>
   </section>
 
-  <!-- RSVP Enhanced -->
+  <!-- RSVP with WhatsApp Integration (+916392192398) -->
   <section class="section" id="rsvp">
     <h2 class="gold" style="font-size: 2rem;">🌿 आपकी उपस्थिति 🌿</h2>
     <p style="margin-bottom: 28px;">Kindly confirm your presence by 15th April 2026</p>
@@ -460,7 +487,20 @@
       <div class="input-group"><input type="text" id="guestName" placeholder="Full Name *" required></div>
       <div class="input-group"><input type="number" id="guestCount" placeholder="Number of guests" min="1" max="8"></div>
       <div class="input-group"><textarea id="message" rows="2" placeholder="Special wishes / dietary preferences..."></textarea></div>
-      <button class="btn-gold" id="rsvpConfirmBtn" style="width:100%; justify-content:center;"><i class="fas fa-envelope-open-text"></i> Submit RSVP</button>
+      
+      <div class="rsvp-buttons">
+        <button class="btn-gold" id="rsvpFormBtn" style="width:100%; justify-content:center;">
+          <i class="fas fa-envelope"></i> Submit via Form
+        </button>
+        <button class="btn-gold btn-whatsapp" id="whatsappRsvpBtn" style="width:100%; justify-content:center; background:#25D366;">
+          <i class="fab fa-whatsapp"></i> RSVP on WhatsApp
+        </button>
+      </div>
+      
+      <div class="whatsapp-note">
+        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+        <span>Directly message us on <strong>+91 63921 92398</strong> for quick confirmation</span>
+      </div>
       <div class="rsvp-message" style="margin-top: 16px;">✨ We look forward to your blessings ✨</div>
     </div>
   </section>
@@ -475,9 +515,9 @@
   <div id="toastMsg" class="toast-msg">✨ RSVP sent successfully ✨</div>
 
   <script>
-    // ------------------------------
-    // 1. INDIAN WEDDING MUSIC with play/pause & auto attempt
-    // ------------------------------
+    // ========================
+    // 1. INDIAN WEDDING MUSIC
+    // ========================
     const audio = document.getElementById('weddingMusic');
     const musicBtn = document.getElementById('musicBtn');
     const musicTextSpan = document.getElementById('musicText');
@@ -490,7 +530,6 @@
         musicBtn.style.background = "#d4af37";
         musicBtn.style.color = "#3e1f00";
       }).catch((err) => {
-        console.log("autoplay blocked", err);
         showToast("🔊 Click music icon again to play", 1800);
       });
     }
@@ -508,18 +547,17 @@
       else playIndianMusic();
     });
 
-    // Attempt to autoplay on first user tap anywhere (better UX)
     document.body.addEventListener('click', function initAudio() {
       if (!isPlaying && audio.paused) {
         playIndianMusic().catch(()=>{});
       }
     }, { once: true });
 
-    // ------------------------------
-    // 2. Countdown Timer to 28 April 2026, 19:30:00
-    // ------------------------------
+    // ========================
+    // 2. Countdown Timer
+    // ========================
     function updateCountdown() {
-      const weddingDate = new Date(2026, 3, 28, 19, 30, 0); // April 28 2026 7:30 PM
+      const weddingDate = new Date(2026, 3, 28, 19, 30, 0);
       const now = new Date();
       const diff = weddingDate - now;
       if (diff <= 0) {
@@ -541,22 +579,20 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ------------------------------
+    // ========================
     // 3. Google Maps
-    // ------------------------------
+    // ========================
     function openMap() {
       const venueQuery = "Fortune Hotel ITC Palm Beach Road Navi Mumbai";
       window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueQuery)}`, '_blank');
     }
     document.getElementById('mapBtn').addEventListener('click', openMap);
 
-    // ------------------------------
-    // 4. RSVP Validation + Storage + Toast
-    // ------------------------------
-    const rsvpBtn = document.getElementById('rsvpConfirmBtn');
+    // ========================
+    // 4. Toast Notification
+    // ========================
     const toastDiv = document.getElementById('toastMsg');
     let toastTimeout;
-
     function showToast(message, duration = 2800) {
       toastDiv.innerText = message;
       toastDiv.style.opacity = '1';
@@ -564,7 +600,11 @@
       toastTimeout = setTimeout(() => { toastDiv.style.opacity = '0'; }, duration);
     }
 
-    rsvpBtn.addEventListener('click', () => {
+    // ========================
+    // 5. RSVP via Form (local storage)
+    // ========================
+    const formBtn = document.getElementById('rsvpFormBtn');
+    formBtn.addEventListener('click', () => {
       const nameInput = document.getElementById('guestName');
       const guestCountInput = document.getElementById('guestCount');
       const messageArea = document.getElementById('message');
@@ -586,7 +626,6 @@
         return;
       }
 
-      // Save to localStorage as memory
       const rsvpRecord = { name, guests: countNum, message: userMsg || "No message", timestamp: new Date().toLocaleString() };
       let stored = localStorage.getItem("wedding_rsvp_list");
       let rsvpList = stored ? JSON.parse(stored) : [];
@@ -598,18 +637,80 @@
       guestCountInput.value = '';
       messageArea.value = '';
       
-      // Subtle animation
-      rsvpBtn.style.transform = "scale(0.97)";
-      setTimeout(() => { rsvpBtn.style.transform = ""; }, 200);
+      formBtn.style.transform = "scale(0.97)";
+      setTimeout(() => { formBtn.style.transform = ""; }, 200);
     });
 
-    // ------------------------------
-    // 5. Petals effect with marigold aesthetic (Indian wedding vibe)
-    // ------------------------------
+    // ========================
+    // 6. WHATSAPP RSVP INTEGRATION (+916392192398)
+    // ========================
+    const whatsappBtn = document.getElementById('whatsappRsvpBtn');
+    const whatsappNumber = "+916392192398"; // Your provided WhatsApp number
+    
+    whatsappBtn.addEventListener('click', () => {
+      const nameInput = document.getElementById('guestName');
+      const guestCountInput = document.getElementById('guestCount');
+      const messageArea = document.getElementById('message');
+      
+      let name = nameInput.value.trim();
+      let guestCount = guestCountInput.value.trim();
+      let userMsg = messageArea.value.trim();
+      
+      if (name === "") {
+        showToast("❌ Please enter your name before sending WhatsApp RSVP", 2000);
+        nameInput.style.borderColor = "#e0a800";
+        setTimeout(() => nameInput.style.borderColor = "#ebddb0", 1500);
+        return;
+      }
+      
+      let countNum = guestCount === "" ? 1 : parseInt(guestCount);
+      if (isNaN(countNum) || countNum < 1) countNum = 1;
+      
+      // Build WhatsApp message
+      let whatsappMessage = `🎉 *Wedding RSVP - Simran & Rakesh* 🎉%0A%0A`;
+      whatsappMessage += `*Name:* ${encodeURIComponent(name)}%0A`;
+      whatsappMessage += `*Guests:* ${countNum}${countNum > 1 ? ` (including ${name})` : ''}%0A`;
+      if (userMsg) {
+        whatsappMessage += `*Message:* ${encodeURIComponent(userMsg)}%0A`;
+      }
+      whatsappMessage += `%0A*Event Dates:* 26-28 April 2026%0A`;
+      whatsappMessage += `*Venue:* Fortune Hotel ITC, Palm Beach Road%0A%0A`;
+      whatsappMessage += `🙏 Looking forward to celebrating with you! 🙏`;
+      
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+      
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
+      
+      // Also store locally for reference
+      const rsvpRecord = { 
+        name, 
+        guests: countNum, 
+        message: userMsg || "RSVP via WhatsApp", 
+        timestamp: new Date().toLocaleString(),
+        method: "WhatsApp"
+      };
+      let stored = localStorage.getItem("wedding_rsvp_list");
+      let rsvpList = stored ? JSON.parse(stored) : [];
+      rsvpList.push(rsvpRecord);
+      localStorage.setItem("wedding_rsvp_list", JSON.stringify(rsvpList));
+      
+      showToast(`📱 Opening WhatsApp for ${name} — send message to confirm!`, 3000);
+      
+      // Optional: Clear form after sending
+      // nameInput.value = '';  // commented to allow user to see what was sent
+      // guestCountInput.value = '';
+      // messageArea.value = '';
+    });
+
+    // ========================
+    // 7. Petals effect (Marigold aesthetic)
+    // ========================
     function createPetal() {
       const petalEl = document.createElement('div');
       petalEl.classList.add('petal');
-      const flowers = ['🌼', '🌸', '🌻', '🌿', '✨', '🌺', '🌼', '🌾'];
+      const flowers = ['🌼', '🌸', '🌻', '🌿', '✨', '🌺', '🌼', '🌾', '🌷', '🍂'];
       const randomFlower = flowers[Math.floor(Math.random() * flowers.length)];
       petalEl.innerHTML = randomFlower;
       petalEl.style.left = Math.random() * 100 + 'vw';
@@ -622,7 +723,7 @@
     setInterval(() => { if(document.hasFocus() || true) createPetal(); }, 550);
     for(let i=0;i<18;i++) setTimeout(() => createPetal(), i*100);
 
-    // 6. Additional improvement: floating greeting / interactive share
+    // Double-tap hero to toggle music
     const heroDiv = document.querySelector('.hero');
     if(heroDiv) {
       heroDiv.addEventListener('dblclick', () => {
@@ -632,13 +733,12 @@
       });
     }
 
-    // 7. Smooth share idea: Add optional keyboard shortcuts?
-    console.log("✨ Indian Wedding Invitation — Shehnai music, countdown, RSVP, Gallery & more ✨");
-
-    // Extra: show welcoming note for Indian wedding
+    // Welcome toast
     setTimeout(() => {
       showToast("🌸 शादी की हार्दिक शुभकामनाएं | Welcome to Simran & Rakesh's wedding 🌸", 3500);
     }, 1000);
+    
+    console.log("✨ Indian Wedding Invitation — WhatsApp RSVP Enabled: +916392192398 ✨");
   </script>
 </body>
 </html>
